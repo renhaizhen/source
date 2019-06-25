@@ -3,7 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-
+import '@/assets/css/base.css'
+import '@/assets/js/rem.js'
+import '@/assets/js/jquery-1.9.1.min.js'
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
