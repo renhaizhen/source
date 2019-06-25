@@ -12,17 +12,17 @@
 				</div>
 			</div>
 			<div class="list_item">
-				<ul class="flex auto justify">
+				<ul class="apul flex auto justify">
 					<li class="first_item">
 						<a href="#test">了解AP考试</a>
 					</li>
-					<li>
+					<li class="apli">
 						<a href="#score">AP高分榜</a>
 					</li>
-					<li>
+					<li class="apli">
 						<a href="#1v1">三立课程优势</a>
 					</li>
-					<li>
+					<li class="apli">
 						<a href="#teacher">名师团队</a>
 					</li>
 				</ul>
@@ -67,14 +67,36 @@
 					立即试听SAT2&AP同步辅导课
 				</div>
 			</div> 
+			<div class="line"></div>
+			<carousel></carousel>
   </div>
 </template>
 
 <script>
+import carousel from "../common/Carousel.vue";
+
 export default {
+	name:'m_ap',
+	components: {
+    carousel,
+  },
   data(){
     return{
+		apTeacher: [
+        require("@/assets/img/page_ap/teacher1.png"),
+        require("@/assets/img/page_ap/teacher2.png"),
+        require("@/assets/img/page_ap/teacher3.png")
+	  ],
+	  imgSrc:[]
     }
+  },
+   created(){
+	console.log(this.$route.path)
+	let str = this.$route.path
+	if(str =="/index"){
+		console.log(54556)
+		this.imgSrc = this.apTeacher
+	}
   },
   methods:{
   }
@@ -112,40 +134,40 @@ export default {
 .wrapper .list_item{
 	background-color: #FFFFFF;
 }
-.wrapper .list_item ul{
+.wrapper .list_item .apul{
 	width: 4.92rem;
 	flex-wrap: wrap;
 }
-.wrapper .list_item ul li{
+.wrapper .list_item .apul .apli{
 	width: 2.14rem;
 	height: .59rem;
 	flex-shrink:0;
 	background-color: #FFFFFF;
-	/* background: url(@/assets/img/page_ap/circle2.png); */
+	background: url(../../assets/img/page_ap/circle2.png);
 	background-size: 100%;
 	color: #E25D30;
 	text-align: center;
 	line-height: .59rem;
 }
-.wrapper .list_item ul li:nth-of-type(1) {
+.wrapper .list_item .apul li:nth-of-type(1) {
 	/* background-color: #e25d30; */
-	/* background: url(@/assets/img/page_ap/circle1.png); */
+	background: url(../../assets/img/page_ap/circle1.png);
 	background-size: 100%;
 }
-.wrapper .list_item ul li:nth-of-type(1) a{
+.wrapper .list_item .apul li:nth-of-type(1) a{
 	color: #FFFFFF;
 }
-.wrapper .list_item ul li:nth-of-type(3),.wrapper .list_item ul li:nth-of-type(4){
+.wrapper .list_item .apul li:nth-of-type(3),.wrapper .list_item .apul li:nth-of-type(4){
 	margin-top:.34rem ;
 	margin-bottom: .47rem;
 }
-.wrapper .list_item ul li:nth-of-type(1),.wrapper .list_item ul li:nth-of-type(2){
+.wrapper .list_item .apul li:nth-of-type(1),.wrapper .list_item .apul li:nth-of-type(2){
 	margin-top:.33rem ;
 }
-.wrapper .list_item ul li:nth-of-type(2),.wrapper .list_item ul li:nth-of-type(4){
+.wrapper .list_item .apul li:nth-of-type(2),.wrapper .list_item .apul li:nth-of-type(4){
 	margin-left: .62rem;
 }
-.wrapper .list_item ul li a{
+.wrapper .list_item .apul li a{
 	font-size: 0.24rem;
 	color: #E25D30;
 	line-height:.52rem ;

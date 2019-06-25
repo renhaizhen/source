@@ -6,6 +6,13 @@ import router from './router'
 import '@/assets/css/base.css'
 import '@/assets/js/rem.js'
 import '@/assets/js/jquery-1.9.1.min.js'
+
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+
+// require styles
+import 'swiper/dist/css/swiper.css'
+
+Vue.use(VueAwesomeSwiper, /* { default global options } */)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
